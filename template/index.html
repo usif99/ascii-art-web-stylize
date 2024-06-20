@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art Web</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+    <div id="header">
+        <h1>ASCII Art Web</h1>
+        <div id="inspiration">Inspired by someone</div>
+    </div>
+
+    <div id="container">
+        <div id="formOption">
+            <form method="POST" action="/">
+                <label for="text">Enter your text:</label>
+                <textarea type="text" id="text" name="thetext" required></textarea>
+                <p class="caption">2000 characters allowed</p>
+                <label for="chose">Choose Banner:</label>
+                <select name="chose" id="chose">
+                    <option value="standard">Standard</option>
+                    <option value="shadow">Shadow</option>
+                    <option value="thinkertoy">Thinkertoy</option>
+                </select>
+                <br><br>
+                <input id="buttons" type="submit" value="Submit" class="submit">
+            </form>
+        </div>
+
+        <div id="output">
+            {{ range .Text }}
+            <pre>{{ . }}</pre>
+            {{ end }}
+        </div>
+    </div>
+
+    <div id="footer">Created by: Yousif Maidan, Tayma Fakhar, Maryam Zaman</div>
+
+</body>
+
+</html>
